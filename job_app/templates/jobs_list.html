@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<style>
+    body{
+            background-image:url(https://media.istockphoto.com/vectors/abstract-bright-white-background-geometric-texture-vector-id1203519033?k=20&m=1203519033&s=612x612&w=0&h=vQaUOleXRZDb5gx-vVXqikBXLyi7io46bDvef9otYkk=);
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-attachment:scroll;
+        }
+</style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {% include 'navbar.html' %}
+</div>
+<div>
+    <h3 style="font-family:cursive;">Current openings</h3>
+    <center>
+        <div class="container-fluid">
+            <div class="row mt-5">
+                {% for i,j,k,l,m,n,o in jobs %}
+                <div class="col-lg-12 mt-3" style="border-radius:10px">
+                    <div class="card mb-3" style="max-width: 540px;height:300px">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="https://previews.123rf.com/images/arcady31/arcady311511/arcady31151100064/48082640-job-openings-sticker.jpg"
+                                     width="100px" height="150px" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title"><b>{{k}}</b> in <b>{{i}}</b></h3>
+                                    <p style="font-size:20px" class="card-text">Urgent openings for <b>{{k}}</b>.
+                                        Behavior
+                                        of work <b>{{l}}</b> and <b>{{n}}</b>.</p>
+                                    <a href="/jobdetails/{{o}}/{{user}}" class="btn btn-secondary">View more</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </center>
+</div>
+<div style="margin-top:90%;">
+    {% include 'footstrip.html' %}
+</div>
+</body>
+</html>
+

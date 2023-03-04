@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/4446cd4099.js" crossorigin="anonymous"></script>
+
+    <style>
+     body{
+            background-image:url(https://img.freepik.com/free-vector/white-gold-geometric-pattern-background-vector_53876-140726.jpg?w=2000);
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+      #ft{
+       margin-top:90%;
+      }
+      #x,#y{
+        margin-top:100px;
+      }
+      .offcanvas-body{
+            background-color:grey
+      }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    {% include 'navbar.html' %}
+</div>
+
+<div id="parent" class="container-fluid">
+
+    <div id="y" class="container">
+           <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">User Details
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                     aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h2 id="offcanvasRightLabel">{{unm}}</h2>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <h3>Contact info</h3><br>
+                        <h4>Email :{{eml}}</h4><br>
+                        <h4>Mobile :{{mb}}</h4><br><br>
+                        <h3>Qualification</h3>
+                        <h4>{{ql}}</h4><br><br><br>
+                        <a href="http://127.0.0.1:8000/editprofile/{{id}}" class="btn btn-success">Edit profile</a>
+                    </div>
+                </div>
+
+    </div>
+
+    <div id="x" class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://static3.bigstockphoto.com/2/0/3/large2/302138302.jpg" width="200px" height="200px"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">View Jobs</h3>
+                        <h5 class="card-text">Find suitable jobs<br>here</h5>
+                        <a href="/joblist/{{id}}" class="btn btn-secondary">Openings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://www.apm.org.uk/v2/media/zlcnotca/data620x6201.png?width=500&height=499.99999999999994"
+                         width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">Registered companies</h3>
+                        <h5 class="card-text">List of companies that<br>join hand with us.</h5>
+                        <a href="http://127.0.0.1:8000/cdis" class="btn btn-secondary">View list</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card" style="width: 20rem;">
+                    <img src="https://i.guim.co.uk/img/media/1cad1901d09a720d6c9acf84392988f20e5abe76/0_232_5500_3301/500.jpg?quality=85&auto=format&fit=max&s=de84930ff0ae7ccbd1e39383d9a61af0"
+                         width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">Jobs Applied</h3>
+                        <h5 class="card-text">List of posts that<br>you applied for...</h5>
+                        <a href="/application/{{id}}" class="btn btn-secondary">View list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ft">
+        {% include 'footstrip.html' %}
+    </div>
+</div>
+</body>
+</html>
+

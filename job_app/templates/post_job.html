@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+  body{
+      background-image:url(https://wallpaperaccess.com/full/2478735.jpg);
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-attachment:scroll;
+    }
+    #x{
+      width:300px;
+      height:500px;
+      background-image:url(https://media.istockphoto.com/photos/flat-lay-top-view-office-table-desk-picture-id1294385362?b=1&k=20&m=1294385362&s=170667a&w=0&h=HlkLnNwuNgU96-7u7vcXMNGOapy5p8_Y9XIUtlwj0qw=);
+      float:left;
+    }
+    table{
+      margin-left:20px;
+    }
+    th{
+      font-size:20px;
+      height:70px;
+    }
+    input{
+      width:400px;
+      border: 1px solid grey;
+      border-radius: 5px;
+    }
+    #smt{
+        width:200px;
+    }
+  </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {% include 'navbar.html' %}
+  </div>
+      <center>
+          <h3><u>Job Details</u></h3>
+        </center>
+      <form method="post">{% csrf_token %}
+      <table align="left">
+        <tr>
+          <th>Company Name </th>
+          <td><input name="cname" type="text" value="{{com.user.username}}"></td>
+        </tr>
+        <tr>
+          <th>Email </th>
+          <td><input name="cemail" type="text" value="{{com.user.email}}"></td>
+        </tr>
+
+        <tr>
+          <th>Job Title </th>
+          <td><input name="ctitle" type="text"></td>
+        </tr>
+        <tr>
+          <th>Work Type </th>
+          <td><select name="ctype" class="form-select" aria-label="Default select example">
+                  <option selected>Select work type</option>
+                  <option value="remote">Remote</option>
+                  <option value="hybrid">Hybrid</option>
+              </select></td>
+        </tr>
+        <tr>
+          <th>Experience </th>
+          <td><select name="cexp" class="form-select" aria-label="Default select example">
+                  <option selected>Select required years of experience</option>
+                  <option value="0-1">0 - 1</option>
+                  <option value="1-2">1 - 2</option>
+                  <option value="2-3">2 - 3</option>
+                  <option value="3-4">3 - 4</option>
+                  <option value="4-5">4 - 5</option>
+                  <option value="5-6">5 - 6</option>
+                  <option value="6-7">6 - 7</option>
+                  <option value="7-8">7 - 8</option>
+          </select></td>
+        </tr>
+        <tr>
+          <th>Job Type </th>
+          <td><select name="jtype" class="form-select" aria-label="Default select example">
+                  <option selected>Select Job type</option>
+                  <option value="partime">Part Time</option>
+                  <option value="fulltime">Full Time</option>
+              </select></td>
+        </tr>
+          <tr>
+               <td><input id="smt" type="submit" class="btn btn-secondary" value="Post Job"></td>
+          </tr>
+      </table>
+
+      </form>
+
+  <div style="margin-top:90%;">
+    {% include 'footstrip.html' %}
+  </div>
+</body>
+</html>

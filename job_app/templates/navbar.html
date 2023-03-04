@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4446cd4099.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+     <style>
+        #nav{
+            width:100%;
+            height:200px;
+            background-image:url(https://images.unsplash.com/photo-1619183744799-68f1fd8f1edb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHdvcmslMjBkZXNrfGVufDB8fDB8fA%3D%3D&w=1000&q=80);
+        }
+        #x1{
+            width:400px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light">
+  <div id="nav" class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://png.pngtree.com/png-vector/20190507/ourmid/pngtree-vector-applyonline-icon-png-image_1025324.jpg" alt="" width="60px" height="60px" class="d-inline-block align-text-top"><h1>JobsGuru</h1>
+    </a>
+      <form method='post'>{% csrf_token %}
+              <input id="x1"class="form-control me-2" type="search" placeholder="Search your dream job with us" aria-label="Search">
+
+            </form>
+      <a id="b1" href="http://127.0.0.1:8000/"  class="btn btn-secondary btn-lg">Home</a>
+      <a id="b2" href="#" class="btn btn-secondary btn-lg">About</a>
+      <div id="a2" class="dropdown">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"><h5>Log-in</h5></a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/clogin">Company</a></li>
+                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/ulogin">Job seeker</a></li>
+
+                        </ul>
+                </div>
+  </div>
+</nav>
+</body>
+</html>
